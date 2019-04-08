@@ -15,10 +15,10 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    QPalette palette;
+//    QPalette palette;
 
-    palette.setColor(QPalette::Background,QColor(192,253,123));
-    this->setPalette(palette);
+//    palette.setColor(QPalette::Background,QColor(192,253,123));
+//    this->setPalette(palette);
 
     setFixedSize(1080,620);
 
