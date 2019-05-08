@@ -1,6 +1,6 @@
 #include "tangguo_common.h"
 #include "ui_mainwindow.h"
-
+#include <qdesktopwidget.h>
 
 twenty *mTwenty;
 one_handred_1 *mOnehandred1;
@@ -20,7 +20,9 @@ MainWindow::MainWindow(QWidget *parent) :
 //    palette.setColor(QPalette::Background,QColor(192,253,123));
 //    this->setPalette(palette);
 
-    setFixedSize(1080,620);
+    QDesktopWidget *desktop = QApplication::desktop();
+
+    setFixedSize(desktop->width(), desktop->height());
 
     mStack = new QStackedWidget(this);
 
