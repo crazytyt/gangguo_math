@@ -15,12 +15,16 @@ class twenty : public QWidget
 public:
 
     int create_one_question(void);
+    int create_100_v1_question(void);
+    int create_100_v2_question(void);
     int get_one_num(int a, int b);
     void click_process(int num);
     void set_time(QString tt);
+
     explicit twenty(QWidget *parent = nullptr);
     ~twenty();
-
+protected:
+    void keyPressEvent(QKeyEvent *);
 private slots:
     void on_pushButton_1_clicked();
 
@@ -51,7 +55,8 @@ private:
     int aa, bb, ss;
     int result;
     int mCorrect, mError, mTotal;
-
+    QString hh;
+    int num;
     Ui::twenty *ui;
 };
 

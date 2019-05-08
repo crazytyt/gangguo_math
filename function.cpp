@@ -4,6 +4,7 @@
 #include "tangguo_common.h"
 #include <QMessageBox>
 
+
 //#define TIMER_TIMEOUT (2 * 1000)
 #define TIMER_TIMEOUT (30 * 1000)
 
@@ -16,6 +17,16 @@ function::function(QWidget *parent) :
     connect(mTimer, SIGNAL(timeout()), this, SLOT(onTimeout()));
     count = 1;
 
+    groupButton1 = new QButtonGroup(this);
+    groupButton1->addButton(ui->radiotwenty, 0);
+    groupButton1->addButton(ui->radio100_1, 1);
+    groupButton1->addButton(ui->radio100_2, 2);
+    ui->radiotwenty->setChecked(true);
+}
+
+unsigned int function::get_function()
+{
+    return fun;
 }
 
 function::~function()
@@ -25,6 +36,20 @@ function::~function()
 
 void function::on_pushButton_clicked()
 {
+    fun = groupButton1->checkedId() + 1;
+
+    switch(fun) {
+    case 1:
+        mTwenty->create_one_question();
+        break;
+    case 2:
+        mTwenty->create_100_v1_question();
+        break;
+    case 3:
+        mTwenty->create_100_v2_question();
+        break;
+    }
+
     mStack->setCurrentIndex(1);
     mTimer->start(TIMER_TIMEOUT);
 }

@@ -75,7 +75,7 @@
        </font>
       </property>
       <property name="text">
-       <string>100以内加减法（被减数为 1 位）</string>
+       <string>100以内加减法（整十数）</string>
       </property>
      </widget>
     </item>
@@ -90,7 +90,7 @@
        </font>
       </property>
       <property name="text">
-       <string>100以内加减法（被减数为 2 位）</string>
+       <string>100以内加减法（非整十数）</string>
       </property>
      </widget>
     </item>
